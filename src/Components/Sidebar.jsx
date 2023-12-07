@@ -50,7 +50,10 @@ const Sidebar = () => {
         <CgProfile fontSize={30} />
         <span className="mt-1 text-md">Profile </span>
       </Link>
-      <Link className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2">
+      <Link
+        to="/auth"
+        className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2"
+      >
         <IoLogOutOutline fontSize={30} />
         <span className="mt-1 text-md">Log Out </span>
       </Link>
