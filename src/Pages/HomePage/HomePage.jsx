@@ -1,8 +1,10 @@
+import Sidebar from "../../Components/Sidebar";
+
 const HomePage = () => {
   return (
-    <main>
-      <div className="text-center">HomePage</div>
-    </main>
+    <div className="flex h-screen">
+      <Sidebar />
+    </div>
   );
 };
 export default HomePage;
