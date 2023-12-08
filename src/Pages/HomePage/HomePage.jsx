@@ -11,7 +11,7 @@ const HomePage = () => {
         <div className="w-full h-20"></div>
       </div>
 
-      <div className="flex flex-grow justify-center overflow-scroll mt-28">
+      <div className="flex flex-grow justify-center overflow-scroll mt-28 ">
         <div className="overflow-scroll">
           <FeedPosts />
         </div>
