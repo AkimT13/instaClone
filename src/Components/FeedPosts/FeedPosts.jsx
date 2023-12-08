@@ -2,7 +2,7 @@ import FeedPost from "./FeedPost";
 
 const FeedPosts = () => {
   return (
-    <div className=" flex flex-col gap-4 overflow-scroll">
+    <div className=" grid gap-4 pt-1">
       <FeedPost />
       <FeedPost />
       <FeedPost />
