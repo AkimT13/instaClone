@@ -53,7 +53,7 @@ const FeedPost = () => {
               className=" cursor-pointer"
             />
           )}
-          <FaRegHeart fontSize={25} />
+
           <FaRegComment fontSize={25} />
           <LuSend fontSize={25} />
         </div>
