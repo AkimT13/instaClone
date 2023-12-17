@@ -1,7 +1,21 @@
+import { useState } from "react";
 import { FaRegHeart, FaRegComment, FaRegBookmark } from "react-icons/fa6";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
+
 const FeedPost = () => {
+  const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
+
+  const handleLike = () => {
+    if (liked) {
+      setLiked(false);
+      setLikes(likes - 1);
+    } else {
+      setLiked(true);
+      setLikes(likes + 1);
+    }
+  };
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between">
@@ -25,12 +39,38 @@ const FeedPost = () => {
 
       <div className="flex justify-between">
         <div className="flex gap-5">
+          {!liked ? (
+            <FaRegHeart
+              fontSize={25}
+              onClick={handleLike}
+              className="cursor-pointer"
+            />
+          ) : (
+            <FaRegHeart
+              fontSize={25}
+              fill={"red"}
+              onClick={handleLike}
+              className=" cursor-pointer"
+            />
+          )}
           <FaRegHeart fontSize={25} />
           <FaRegComment fontSize={25} />
           <LuSend fontSize={25} />
         </div>
-        <FaRegBookmark fontSize={25} />
+        <FaRegBookmark fontSize={25} className="cursor-pointer" />
       </div>
+      <div className="font-bold"> {likes} likes</div>
+      <div className=" w-96">
+        <p className="">
+          <span className="font-bold text-black cursor-pointer">Username </span>
+          Ooooh look at me taking a little photo
+        </p>
+      </div>
+      <p className=" cursor-pointer text-gray-500">View all 11 comments</p>
+      <input
+        placeholder="Add a comment"
+        className="bg-whiteBg border-b border-slate-400 focus:border-slate-400 focus:outline-none "
+      />
     </div>
   );
 };
