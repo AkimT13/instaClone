@@ -46,7 +46,10 @@ const Sidebar = () => {
         <FaRegSquarePlus fontSize={30} />
         <span className="mt-1 text-md">Create </span>
       </Link>
-      <Link className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2">
+      <Link
+        className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2"
+        to="/:username"
+      >
         <CgProfile fontSize={30} />
         <span className="mt-1 text-md">Profile </span>
       </Link>
