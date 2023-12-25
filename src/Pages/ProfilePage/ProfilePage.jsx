@@ -1,7 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import Sidebar from "../../Components/Sidebar";
 
 const ProfilePage = () => {
+  const [tab, tabSelect] = useState(0);
+  const handleTab = (tabNum) => {
+    tabSelect(tabNum);
+  };
+
   return (
     <div className="flex h-screen">
       <Sidebar />
@@ -33,8 +38,42 @@ const ProfilePage = () => {
             <p className="font-bold text-md p-4 pl-8">Regular Name</p>
           </div>
         </div>
-        <div>Profiletabs</div>
-        <div>profileposts</div>
+        <div className="flex justify-center border-t border-t-slate-500 w-[85%] mt-4 gap-6">
+          <p
+            onClick={() => handleTab(0)}
+            className={
+              "cursor-pointer " +
+              (tab === 0 ? "text-black" : "text-neutral-600")
+            }
+          >
+            POSTS
+          </p>
+          <p
+            onClick={() => handleTab(1)}
+            className={
+              "cursor-pointer " +
+              (tab === 1 ? "text-black" : "text-neutral-600")
+            }
+          >
+            SAVED
+          </p>
+          <p
+            onClick={() => handleTab(2)}
+            className={
+              "cursor-pointer " +
+              (tab === 2 ? "text-black" : "text-neutral-600")
+            }
+          >
+            TAGGED{" "}
+          </p>
+          <p>{tab}</p>
+        </div>
+        <div className="grid grid-cols-3 gap-1">
+          <img src="/public/PhotoImage.webp" className="w-60 h-60 bg-cover" />
+          <img src="/public/PhotoImage.webp" className="w-60 h-60" />
+          <img src="/public/PhotoImage.webp" className="w-60 h-60" />
+          <img src="/public/PhotoImage.webp" className="w-60 h-60" />
+        </div>
       </div>
     </div>
   );
