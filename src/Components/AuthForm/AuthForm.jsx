@@ -3,20 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const [isLogIn, setIsLogin] = useState(true);
-  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
-  const handleAuth = () => {
-    console.log(inputs);
-    if (!inputs.email || !inputs.password || inputs.confirmPassword) {
-      alert("Please fill all forms");
-      return;
-    }
-    navigate("/");
-  };
 
   const handleToggle = () => {
     // Toggle the value of isLogIn
@@ -54,20 +46,14 @@ const AuthForm = () => {
                 setInputs({ ...inputs, confirmPassword: e.target.value })
               }
             />
-            <button
-              className="w-64 bg-blue-400 text-white rounded p-2"
-              onClick={handleAuth}
-            >
+            <button className="w-64 bg-blue-400 text-white rounded p-2">
               Sign Up
             </button>
           </>
         )}
 
         {isLogIn && (
-          <button
-            className="w-64 bg-blue-400 text-white rounded p-2"
-            onClick={handleAuth}
-          >
+          <button className="w-64 bg-blue-400 text-white rounded p-2">
             Log In
           </button>
         )}
