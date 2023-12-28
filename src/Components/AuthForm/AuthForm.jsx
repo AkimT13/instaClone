@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../Firebase/Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import useSignUpEmailAndPassword from "../../hooks/useSignUpEmailAndPassword";
 
 const AuthForm = () => {
   const [isLogIn, setIsLogin] = useState(true);
@@ -8,6 +11,8 @@ const AuthForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    username: "",
+    fullName: "",
   });
 
   const [showPassword , setShowPassword] = useState(false)
@@ -16,6 +21,7 @@ const AuthForm = () => {
     // Toggle the value of isLogIn
     setIsLogin(!isLogIn);
   };
+  const { loading, error, signup } = useSignUpEmailAndPassword();
 
   return (
     <>
@@ -23,7 +29,7 @@ const AuthForm = () => {
         <img src="/instablacklogo.png" className="w-40 snap-center pt-5" />
 
         <input
-          placeholder="Username, Phonenumber, Email"
+          placeholder="Email"
           className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
           type="email"
           value={inputs.email}
@@ -48,7 +54,28 @@ const AuthForm = () => {
                 setInputs({ ...inputs, confirmPassword: e.target.value })
               }
             />
-            <button className="w-64 bg-blue-400 text-white rounded p-2">
+            <input
+              placeholder="Username"
+              className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
+              type="text"
+              value={inputs.username}
+              onChange={(e) =>
+                setInputs({ ...inputs, username: e.target.value })
+              }
+            />
+            <input
+              placeholder="Full Name"
+              className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
+              type="text"
+              value={inputs.fullName}
+              onChange={(e) =>
+                setInputs({ ...inputs, fullName: e.target.value })
+              }
+            />
+            <button
+              onClick={() => signup(inputs)}
+              className="w-64 bg-blue-400 text-white rounded p-2"
+            >
               Sign Up
             </button>
           </>

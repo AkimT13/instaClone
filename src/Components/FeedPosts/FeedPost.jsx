@@ -35,7 +35,7 @@ const FeedPost = ({ username, img, avatar }) => {
         </p>
       </div>
 
-      <img src={img} className=" w-96 h-[30rem] rounded-sm object-cover" />
+      <img src={img} className="   aspect-[4/5] rounded-sm object-cover" />
 
       <div className="flex justify-between">
         <div className="flex gap-5">
