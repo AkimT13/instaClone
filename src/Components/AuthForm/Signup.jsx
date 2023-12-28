@@ -32,13 +32,16 @@ const Signup = () => {
         onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
       />
 
+
+
       <input
         placeholder="Password"
         className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
-        type="password"
+        type={showPassword ? 'password' : 'text'}
         value={inputs.password}
         onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
       />
+      
     </>
   );
 };

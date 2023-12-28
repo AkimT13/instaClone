@@ -10,6 +10,8 @@ const AuthForm = () => {
     confirmPassword: "",
   });
 
+  const [showPassword , setShowPassword] = useState(false)
+
   const handleToggle = () => {
     // Toggle the value of isLogIn
     setIsLogin(!isLogIn);
@@ -30,7 +32,7 @@ const AuthForm = () => {
         <input
           placeholder="Password"
           className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
-          type="password"
+          type= {!showPassword ? "password" : "text"}
           value={inputs.password}
           onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
         />
