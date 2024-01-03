@@ -55,7 +55,7 @@ const Sidebar = () => {
         <span className="mt-1 text-md">Profile </span>
       </Link>
       <div
-        onClick = (handleLogout)
+        onClick = {handleLogout}
         className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2"
       >
         <IoLogOutOutline fontSize={30} />
