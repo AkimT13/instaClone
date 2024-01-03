@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
 
 const Sidebar = () => {
-  const [handleLogout,isLoggingOut, error] =  useLogout()
+  const [handleLogout, isLoggingOut, error] = useLogout();
   return (
     <div className="flex items-center justify-start flex-col w-64 border border-slate-300 gap-4">
       <img src="instablacklogo.png" className="  w-40 p-5 pb-4" />
@@ -55,7 +55,7 @@ const Sidebar = () => {
         <span className="mt-1 text-md">Profile </span>
       </Link>
       <div
-        onClick = (handleLogout)
+        onClick={handleLogout}
         className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2"
       >
         <IoLogOutOutline fontSize={30} />
