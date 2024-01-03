@@ -9,6 +9,7 @@ import { FaFacebookMessenger, FaRegSquarePlus } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
+import useLogout from "../hooks/useLogout";
 
 const Sidebar = () => {
   const [handleLogout, isLoggingOut, error] = useLogout();
@@ -55,8 +56,8 @@ const Sidebar = () => {
         <span className="mt-1 text-md">Profile </span>
       </Link>
       <div
-        onClick={handleLogout}
         className="flex hover:bg-gray-200 rounded-md w-60 text-left p-3 font-bold gap-2"
+        onClick={handleLogout}
       >
         <IoLogOutOutline fontSize={30} />
         <span className="mt-1 text-md">Log Out </span>
