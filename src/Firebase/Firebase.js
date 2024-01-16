@@ -4,6 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore";
 import {getStorage} from "firebase/storage";
+import {getDatabase} from "firebase/database"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,7 +17,8 @@ const firebaseConfig = {
   storageBucket: "newsgram-de051.appspot.com",
   messagingSenderId: "1073911282224",
   appId: "1:1073911282224:web:a1a820de12b20a140f4bf5",
-  measurementId: "G-KF9HK27B5C"
+  measurementId: "G-KF9HK27B5C",
+  databaseURL: "https://newsgram-de051-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
@@ -25,5 +27,6 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 const storage  = getStorage(app);
+const database = getDatabase(app);
 
-export {auth, app,firestore,storage, analytics}
+export {auth, app,firestore,storage, analytics,database}

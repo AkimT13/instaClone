@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import useSignUpEmailAndPassword from "../../hooks/useSignUpEmailAndPassword";
+import useAuthStore from "../../store/authStore.js";
 
 const AuthForm = () => {
   const [isLogIn, setIsLogin] = useState(true);
@@ -15,7 +16,7 @@ const AuthForm = () => {
     fullName: "",
   });
 
-  const [showPassword , setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleToggle = () => {
     // Toggle the value of isLogIn
@@ -38,7 +39,7 @@ const AuthForm = () => {
         <input
           placeholder="Password"
           className="text-sm w-64 p-2 rounded-md border border-slate-300 bg-slate-200"
-          type= {!showPassword ? "password" : "text"}
+          type={!showPassword ? "password" : "text"}
           value={inputs.password}
           onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
         />
@@ -94,6 +95,9 @@ const AuthForm = () => {
         <div className="flex gap-2">
           <img src="/googleLogo.svg" className="w-5 " />
           <p>Sign In with Google</p>
+          <p onClick={useAuthStore((state) => state.login)}>
+            Continue as guest
+          </p>
         </div>
       </div>
 
