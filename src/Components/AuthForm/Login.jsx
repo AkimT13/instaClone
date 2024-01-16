@@ -6,7 +6,7 @@ const Login = () => {
     confirmPassword: "",
   });
   //random ass change
-  const i = "bruh";
+  const i = "bruhhhhhh";
   return (
     <>
       <input
