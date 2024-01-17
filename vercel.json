@@ -4,7 +4,7 @@
             "name": "Delete and Create",
             "path": "/handleNews.js",
             "command": "node handleNews",
-            "schedule": "*/1 * * * *"
+            "schedule": "0 0 * * *"
         }
 
     ]
