@@ -1,7 +1,7 @@
 {
     "crons": [
         {
-            "name": "Delete and Create",
+            
             "path": "/handleNews.js",
             "command": "node handleNews",
             "schedule": "0 0 * * *"
