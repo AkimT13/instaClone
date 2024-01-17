@@ -1,51 +1,26 @@
+// handleNews.js
+
 import axios from 'axios';
 import dotenv from 'dotenv';
-import process from 'process'; 
 import { ref, set } from 'firebase/database';
-import {database} from './src/Firebase/Firebase.js';
-
+import { database } from './src/Firebase/Firebase.js';
+import { process } from 'node';
 
 dotenv.config();
 
-//file will be ran by vercel every 24 hours
-
-async function deleteData() {
-    try {
-        await delete(ref(database, "/headlines"));
-        console.log("Data Deleted");
-    } catch (error) {
-        console.error("Error deleting data", error);
-    }
-}
-
-const apiKey = process.env.VITE_NEWSAPIKEY;
-
-const getTopHeadlines = async () => {
+export default async function handler(req, res) {
   try {
+    // Your data update logic here
+    const apiKey = process.env.VITE_NEWSAPIKEY;
     let response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
-    console.log("Fetched top headlines");
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching top headlines:", error);
-    throw error; // Re-throw the error to propagate it
-  }
-};
+    const headlines = response.data;
 
-// Call the asynchronous function using await or .then()
-async function storeData() {
-  try {
-    const headlines = await getTopHeadlines();
-    console.log("Storing data...");
     // Store the data in the database
-     await set(ref(database, "/headlines"), headlines);
+    await set(ref(database, "/headlines"), headlines);
 
+    res.status(200).json({ message: 'Data updated successfully' });
   } catch (error) {
-    console.error("Error in Storing Data", error);
+    console.error('Error updating data', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
-
-// Call the function
-deleteData();
-storeData();
-
-
