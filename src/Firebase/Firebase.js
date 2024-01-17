@@ -11,7 +11,7 @@ import {getDatabase} from "firebase/database"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAropxVw7NO1dVu4SR2hQ4jRlykWgxglMY",
+  apiKey: "AIzaSyD6dlCKy-4jT7q2uEu5yuj_8yKT0w7lT7k",
   authDomain: "newsgram-de051.firebaseapp.com",
   projectId: "newsgram-de051",
   storageBucket: "newsgram-de051.appspot.com",
