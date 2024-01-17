@@ -3,7 +3,7 @@ import { FaRegHeart, FaRegComment, FaRegBookmark } from "react-icons/fa6";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
 
-const FeedPost = ({ username, img, avatar }) => {
+const FeedPost = ({ author, img, logo, articleContnent, link }) => {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(0);
 
@@ -22,11 +22,11 @@ const FeedPost = ({ username, img, avatar }) => {
         <div className="flex gap-2 ">
           <img
             className="w-8 h-8 rounded-full -translate-y-1"
-            src={avatar}
+            src={logo}
             alt="Rounded avatar"
           />
           <div className="flex gap-2 ">
-            <p className="font-bold">{username}</p>
+            <p className="font-bold">{author}</p>
             <p>• 7w</p>
           </div>
         </div>
