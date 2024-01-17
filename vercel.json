@@ -1,0 +1,11 @@
+{
+    "crons": [
+        {
+            "name": "Delete and Create",
+            "path": "./storeNews.js",
+            "command": "node deleteData",
+            "schedule": "*/1 * * * *"
+        }
+
+    ]
+}

@@ -1,10 +1,22 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import process from 'process'; 
+import { ref, set } from 'firebase/database';
+import {database} from './src/Firebase/Firebase.js';
+
 
 dotenv.config();
 
+//file will be ran by vercel every 24 hours
 
+async function deleteData() {
+    try {
+        await delete(ref(database, "/headlines"));
+        console.log("Data Deleted");
+    } catch (error) {
+        console.error("Error deleting data", error);
+    }
+}
 
 const apiKey = process.env.VITE_NEWSAPIKEY;
 
@@ -20,16 +32,20 @@ const getTopHeadlines = async () => {
 };
 
 // Call the asynchronous function using await or .then()
-async function fetchData() {
+async function storeData() {
   try {
     const headlines = await getTopHeadlines();
-    console.log(headlines);
+    console.log("Storing data...");
+    // Store the data in the database
+     await set(ref(database, "/headlines"), headlines);
+
   } catch (error) {
-    console.error("Error in fetchData:", error);
+    console.error("Error in Storing Data", error);
   }
 }
 
 // Call the function
-fetchData();
+deleteData();
+storeData();
 
 
