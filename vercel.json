@@ -1,22 +1,11 @@
 {
-  "builds": [
-    {
-      "src": "handleNews.js",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/handle-news",
-      "dest": "/handleNews.js"
-    }
-  ],
-  "cron": "0 0 * * *",
-  "functions": {
-    "api/handle-news": {
-      "memory": 128
-    }
-  }
+    "crons" : [
+        {
+            "path" :  "/handleNews.js",
+            "schedule": "0 0 * * *"
+        }
+        
+
+
+    ]
 }
-
-
