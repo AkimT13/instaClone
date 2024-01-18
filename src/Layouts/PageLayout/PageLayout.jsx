@@ -1,7 +1,12 @@
-import React from "react";
+import Navbar from "../../Components/Navbar";
 
 const PageLayout = ({ children }) => {
-  return <div>PageLayout</div>;
+  return (
+    <div>
+      <Navbar />
+      <div>{children}</div>
+    </div>
+  );
 };
 
 export default PageLayout;
