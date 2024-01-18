@@ -2,7 +2,7 @@ import FeedPost from "./FeedPost";
 
 const FeedPosts = () => {
   return (
-    <div className=" grid gap-4 pt-1 pr-5">
+    <div className=" grid gap-4 pt-1 pr-5 ">
       <FeedPost
         username="user1"
         img="/PhotoImage.webp"

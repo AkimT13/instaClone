@@ -30,7 +30,7 @@ const FeedPost = ({ author, img, avatar, articleContnent, link }) => {
             <p>• 7w</p>
           </div>
         </div>
-        <p className="text-blue-500 font-bold hover:text-black transition ease-in-out delay-75 cursor-pointer ">
+        <p className="text-blue-500 font-bold hover:text-white transition ease-in-out delay-75 cursor-pointer ">
           Unfollow
         </p>
       </div>
