@@ -19,9 +19,14 @@ const TopStories = () => {
   }, []); // Empty dependency array ensures the effect runs only once, similar to componentDidMount
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-cente gap-5">
       {topStories.map((story, index) => (
-        <Article key={index} date={story.date} author={story.author} />
+        <Article
+          key={index}
+          date={story.date}
+          author={story.author}
+          image={story.urlToImage}
+        />
       ))}
     </div>
   );

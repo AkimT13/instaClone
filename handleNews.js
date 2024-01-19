@@ -10,7 +10,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
   try {
-    // Your data update logic here
+    //get data from newsapi
     const apiKey = process.env.VITE_NEWSAPIKEY;
     let response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
     const headlines = response.data;

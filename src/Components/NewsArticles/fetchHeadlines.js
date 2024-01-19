@@ -26,7 +26,7 @@ function cleanArticles(articles) {
 
   for (const article of articles) {
     let cleanedArticle = {
-      author: article.author || "*No Name Mentioned*",
+      author: (article.author && article.author.length <= 20) ? article.author : "*No Name Mentioned*",
       content: article.content ? article.content.substring(0, 12) : "",
       description: article.description || (article.content ? article.content.substring(0, 12) : ""),
       date: article.publishedAt || "",
