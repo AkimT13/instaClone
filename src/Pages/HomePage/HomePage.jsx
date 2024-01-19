@@ -2,6 +2,7 @@ import FeedPosts from "../../Components/FeedPosts/FeedPosts";
 import Sidebar from "../../Components/Sidebar";
 import StorySection from "../../Components/StorySection";
 import PageLayout from "../../Layouts/PageLayout/PageLayout";
+import TopStories from "../../Components/NewsArticles/TopStories";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,7 @@ const HomePage = () => {
 
         <div className="flex flex-grow justify-center overflow-scroll mt-28 ">
           <div className="overflow-scroll">
-            <FeedPosts />
+            <TopStories />
           </div>
         </div>
       </div>

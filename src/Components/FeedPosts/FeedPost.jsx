@@ -3,7 +3,7 @@ import { FaRegHeart, FaRegComment, FaRegBookmark } from "react-icons/fa6";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
 
-const FeedPost = ({ author, img, avatar, articleContnent, link }) => {
+const FeedPost = ({ author, img, avatar }) => {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(0);
 
