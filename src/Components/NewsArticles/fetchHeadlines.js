@@ -1,5 +1,6 @@
 import { database } from "../../Firebase/Firebase.js";
 import { ref, getDatabase, get } from "firebase/database";
+import {format } from "date-format"
 
 export async function fetchArticles() {
   const databaseRef = ref(getDatabase(), "headlines");
@@ -29,7 +30,7 @@ function cleanArticles(articles) {
       author: (article.author && article.author.length <= 20) ? article.author : "*No Name Mentioned*",
       content: article.content ? article.content.substring(0, 12) : "",
       description: article.description || (article.content ? article.content.substring(0, 12) : ""),
-      date: article.publishedAt || "",
+      date: formatDate(article.publishedAt)|| "",
       source: {
         id: "",
         name: article.source ? article.source.name : "",
@@ -43,6 +44,10 @@ function cleanArticles(articles) {
   }
 
   return cleanedArticles;
+}
+
+function formatDate(time){
+
 }
 
 
