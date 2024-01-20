@@ -27,7 +27,7 @@ function cleanArticles(articles) {
 
   for (const article of articles) {
     let cleanedArticle = {
-      author: (article.author && article.author.length <= 20) ? article.author : "*No Name Mentioned*",
+      author: (article.author && article.author.length <= 20) ? article.author : article.source.name,
       content: article.content ? article.content.substring(0, 12) : "",
       description: article.description || (article.content ? article.content.substring(0, 12) : ""),
       date: formatDate(article.publishedAt)|| "",
@@ -38,15 +38,23 @@ function cleanArticles(articles) {
       title: article.title || "",
       url: article.url || "",
       urlToImage: article.urlToImage || "",
+      
     };
 
-    cleanedArticles.push(cleanedArticle);
+    if(cleanedArticle.urlToImage!= "") cleanedArticles.push(cleanedArticle);
   }
 
   return cleanedArticles;
 }
 
 function formatDate(time){
+
+   time =  time.split("T").shift().split('-').reverse();
+  const temp = time[0];
+  time[0] = time[1];
+  time[1] = temp;
+  return time.join('/');
+  
 
 }
 

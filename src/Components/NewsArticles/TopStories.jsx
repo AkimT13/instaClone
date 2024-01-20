@@ -26,6 +26,9 @@ const TopStories = () => {
           date={story.date}
           author={story.author}
           image={story.urlToImage}
+          title={story.title}
+          url={story.url}
+          description={story.description}
         />
       ))}
     </div>

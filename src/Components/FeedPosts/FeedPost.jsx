@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegHeart, FaRegComment, FaRegBookmark } from "react-icons/fa6";
+
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
 
