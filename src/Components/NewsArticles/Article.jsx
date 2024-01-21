@@ -1,6 +1,7 @@
 import React from "react";
 import { FaHeart, FaComment, FaBookmark } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
+import MoreDetails from "./MoreDetails.jsx";
 
 import { useState } from "react";
 const Article = ({ date, author, image, title, url, description }) => {
@@ -24,7 +25,7 @@ const Article = ({ date, author, image, title, url, description }) => {
 
         <p
           onClick={expand}
-          className="text-white text-2xl p-2 font-Oswald font-medium hover:text-blue-400 ease-in-out duration-500"
+          className="text-white text-2xl p-2 font-Oswald font-medium hover:text-blue-400 ease-in-out duration-500 cursor-pointer"
         >
           {title}
         </p>
@@ -35,6 +36,7 @@ const Article = ({ date, author, image, title, url, description }) => {
           </p>
           <p className="text-white text-xs">{date}</p>
         </div>
+        {showMore ? <MoreDetails description={description} /> : <p></p>}
       </div>
     </div>
   );
