@@ -7,7 +7,7 @@ import TopStories from "../../Components/NewsArticles/TopStories";
 const HomePage = () => {
   return (
     <PageLayout>
-      <div className="flex h-screen bg-zinc-900">
+      <div className="flex h-screen bg-zinc-950">
         <div className="flex flex-col">
           <div className="w-full h-20"></div>
         </div>

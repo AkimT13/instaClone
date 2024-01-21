@@ -19,19 +19,23 @@ const TopStories = () => {
   }, []); // Empty dependency array ensures the effect runs only once, similar to componentDidMount
 
   return (
-    <div className="flex flex-col justify-cente gap-5">
-      {topStories.map((story, index) => (
-        <Article
-          key={index}
-          date={story.date}
-          author={story.author}
-          image={story.urlToImage}
-          title={story.title}
-          url={story.url}
-          description={story.description}
-        />
-      ))}
-    </div>
+    <>
+      <p className="text-white font-NunitoSans text-2xl pb-2">Top Headlines</p>
+      <div className="flex flex-col justify-cente gap-5">
+        {topStories.map((story, index) => (
+          <Article
+            key={index}
+            date={story.date}
+            author={story.author}
+            image={story.urlToImage}
+            title={story.title}
+            url={story.url}
+            description={story.description}
+          />
+        ))}
+      </div>
+      );
+    </>
   );
 };
 

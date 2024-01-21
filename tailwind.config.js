@@ -6,10 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        'Oswald' : ['Oswald','sans-serif'],
+        'NunitoSans': ['Nunito Sans', 'sans-serif']
+      },
       colors: {
         whiteBg : "#EEF2F7"
       }
     },
+    
   },
   plugins: [],
 }
