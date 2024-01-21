@@ -27,7 +27,7 @@ const AuthForm = () => {
   return (
     <>
       <div className="flex flex-col w-80 h-auto p-5 border-slate-300 border items-center gap-5">
-        <img src="/instablacklogo.png" className="w-40 snap-center pt-5" />
+        <p className="text-3xl font-Oswald">NewsGram</p>
 
         <input
           placeholder="Email"
