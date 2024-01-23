@@ -9,6 +9,7 @@ import { FaFacebookMessenger, FaRegSquarePlus } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
+import {useLogout} from "../hooks/useLogout"
 
 const Sidebar = () => {
   const [handleLogout, isLoggingOut, error] = useLogout();
