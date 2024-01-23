@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { FaRegHeart, FaRegComment, FaRegBookmark } from "react-icons/fa6";
+
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
 
-const FeedPost = ({ username, img, avatar }) => {
+const FeedPost = ({ author, img, avatar }) => {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(0);
 
@@ -26,11 +27,11 @@ const FeedPost = ({ username, img, avatar }) => {
             alt="Rounded avatar"
           />
           <div className="flex gap-2 ">
-            <p className="font-bold">{username}</p>
+            <p className="font-bold">{author}</p>
             <p>• 7w</p>
           </div>
         </div>
-        <p className="text-blue-500 font-bold hover:text-black transition ease-in-out delay-75 cursor-pointer ">
+        <p className="text-blue-500 font-bold hover:text-white transition ease-in-out delay-75 cursor-pointer ">
           Unfollow
         </p>
       </div>

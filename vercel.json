@@ -1,0 +1,11 @@
+{
+    "crons" : [
+        {
+            "path" :  "/handleNews.js",
+            "schedule": "0 0 * * *"
+        }
+        
+
+
+    ]
+}
