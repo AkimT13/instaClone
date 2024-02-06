@@ -39,6 +39,7 @@ function cleanArticles(articles) {
       url: article.url || "",
       urlToImage: article.urlToImage || "",
       
+      
     };
 
     if(cleanedArticle.urlToImage!= "") cleanedArticles.push(cleanedArticle);
