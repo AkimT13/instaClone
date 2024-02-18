@@ -1,6 +1,7 @@
 import { database } from "../../Firebase/Firebase.js";
 import { ref, getDatabase, get } from "firebase/database";
 import {format } from "date-format"
+//import {getHtml} from "./getHtml.js"
 
 export async function fetchArticles() {
   const databaseRef = ref(getDatabase(), "headlines");
@@ -24,7 +25,7 @@ export async function fetchArticles() {
 
 function cleanArticles(articles) {
   let cleanedArticles = [];
-
+  
   for (const article of articles) {
     let cleanedArticle = {
       author: (article.author && article.author.length <= 20) ? article.author : article.source.name,
@@ -38,9 +39,11 @@ function cleanArticles(articles) {
       title: article.title || "",
       url: article.url || "",
       urlToImage: article.urlToImage || "",
+      html: article.html.textContent
+    }
       
       
-    };
+    
 
     if(cleanedArticle.urlToImage!= "") cleanedArticles.push(cleanedArticle);
   }

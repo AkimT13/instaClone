@@ -4,7 +4,7 @@ import { IoSend } from "react-icons/io5";
 import MoreDetails from "./MoreDetails.jsx";
 
 import { useState } from "react";
-const Article = ({ date, author, image, title, url, description }) => {
+const Article = ({ date, author, image, title, url, description, html }) => {
   const [showMore, setShowMore] = useState(false);
   const expand = () => {
     if (showMore == true) {
@@ -36,7 +36,11 @@ const Article = ({ date, author, image, title, url, description }) => {
           </p>
           <p className="text-white text-xs">{date}</p>
         </div>
-        {showMore ? <MoreDetails description={description} /> : <p></p>}
+        {showMore ? (
+          <MoreDetails description={description} html={html} />
+        ) : (
+          <p></p>
+        )}
       </div>
     </div>
   );

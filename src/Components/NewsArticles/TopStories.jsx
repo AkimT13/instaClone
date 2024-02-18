@@ -16,7 +16,7 @@ const TopStories = () => {
     };
 
     fetchTopStories();
-  }, []); // Empty dependency array ensures the effect runs only once, similar to componentDidMount
+  }, []);
 
   return (
     <>
@@ -31,6 +31,7 @@ const TopStories = () => {
             title={story.title}
             url={story.url}
             description={story.description}
+            html={story.html}
           />
         ))}
       </div>
